@@ -5,16 +5,16 @@ const readTasks = () => {
       const data = fs.readFileSync("task.json", "utf8");
       return JSON.parse(data).tasks || [];
     } catch (err) {
-      throw new Error("Error reading file");
+      console.log(err)
     }
   };
   
-  // Helper function to write tasks.json
+  
   const writeTasks = (tasks) => {
     try {
       fs.writeFileSync("task.json", JSON.stringify({ tasks }, null, 2));
     } catch (err) {
-      throw new Error("Error saving file");
+      console.log(err)
     }
   };
   
